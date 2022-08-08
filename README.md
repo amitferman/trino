@@ -1,3 +1,14 @@
+Workaround for JIRA <a href="https://issues.apache.org/jira/browse/SPARK-36163">SPARK-36163</a>. Tested on Spark 3.1.2 EMR cluster. To use this workaround, either rebuild `trino` and extract the fat jar from `trino-jdbc`, or simply use the fat jar here:
+
+JAR
+
+The fully qualified driver class name to use with Spark is the usual `io.trino.jdbc.TrinoDriver`.
+
+Note: This bug was fixed in Spark 3.3.x. If you are not restricted to Spark 3.1.x, then upgrade Spark instead of using this.
+
+
+<hr/>
+<hr/>
 <p align="center">
     <a href="https://trino.io/"><img alt="Trino Logo" src=".github/homepage.png" /></a>
 </p>
