@@ -1,6 +1,6 @@
-Workaround for JIRA <a href="https://issues.apache.org/jira/browse/SPARK-36163">SPARK-36163</a>. Tested on Spark 3.1.2 EMR cluster. To use this workaround, either rebuild `trino` and extract the fat jar from `trino-jdbc`, or simply use the fat jar here:
+Workaround for JIRA <a href="https://issues.apache.org/jira/browse/SPARK-36163">SPARK-36163</a>. As the issue describes, the compatibility issue between Trino JDBC drivers and Spark 3.1.x is caused by a bug in Spark 3.1.x. However, for systems that are restricted to 3.1.x, this workaround should suffice. Tested on Spark 3.1.2 EMR cluster. To use this workaround, either rebuild `trino` and extract the fat jar from `trino-jdbc`, or simply use the fat jar here:
 
-JAR
+[trino-jdbc-393-SNAPSHOT.jar](trino-jdbc-java-archive/trino-jdbc-393-SNAPSHOT.jar)
 
 The fully qualified driver class name to use with Spark is the usual `io.trino.jdbc.TrinoDriver`.
 
