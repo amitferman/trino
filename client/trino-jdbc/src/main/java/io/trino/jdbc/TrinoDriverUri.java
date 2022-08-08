@@ -491,6 +491,14 @@ public final class TrinoDriverUri
     {
         for (String propertyName : connectionProperties.stringPropertyNames()) {
             if (ConnectionProperties.forKey(propertyName) == null) {
+                /// >>> Workaround >>>
+                if (propertyName.equals("url")
+                        || propertyName.equals("driver")
+                        || propertyName.equals("query")
+                        || propertyName.equals("dbtable")) {
+                    continue;
+                }
+                /// <<< Workaround <<<
                 throw new SQLException(format("Unrecognized connection property '%s'", propertyName));
             }
         }
